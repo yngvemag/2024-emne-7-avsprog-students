@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vio4xaENwoeC+UnyU1jkykPbjTqFD+dmTaLp2fID6/ix1yxI+hBBRZw+gITvovMXLv9FUauRaRx/FKjdtNujkA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Yngve\\OneDrive - GOKSTAD AKADEMIET AS\\ga-code\\24-25\\Emne 7 Avansert Programmering\\students\\emne-7-avsprog\\2-PersonRestAPI\\2-PersonRestAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yngve\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.7\\microsoft.aspnetcore.openapi.8.0.7.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

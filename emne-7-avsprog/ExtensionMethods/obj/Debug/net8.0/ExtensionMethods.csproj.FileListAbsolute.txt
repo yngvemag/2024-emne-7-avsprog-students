@@ -1,0 +1,15 @@
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\bin\Debug\net8.0\ExtensionMethods.exe
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\bin\Debug\net8.0\ExtensionMethods.deps.json
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\bin\Debug\net8.0\ExtensionMethods.runtimeconfig.json
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\bin\Debug\net8.0\ExtensionMethods.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\bin\Debug\net8.0\ExtensionMethods.pdb
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ExtensionMethods.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ExtensionMethods.AssemblyInfoInputs.cache
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ExtensionMethods.AssemblyInfo.cs
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ExtensionMethods.csproj.CoreCompileInputs.cache
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ExtensionMethods.sourcelink.json
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ExtensionMethods.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\refint\ExtensionMethods.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ExtensionMethods.pdb
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ExtensionMethods.genruntimeconfig.cache
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\ExtensionMethods\obj\Debug\net8.0\ref\ExtensionMethods.dll

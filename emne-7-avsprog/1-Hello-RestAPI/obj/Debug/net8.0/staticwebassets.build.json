@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "V3Q+gtvGAOnM1gZK3Aa8rr/iE1OvOR9mmPQn70fLG+s=",
+  "Source": "1-Hello-RestAPI",
+  "BasePath": "_content/1-Hello-RestAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
