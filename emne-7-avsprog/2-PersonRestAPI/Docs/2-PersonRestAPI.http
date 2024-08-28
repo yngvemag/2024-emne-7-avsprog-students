@@ -10,9 +10,21 @@ Content-Type: application/json
 
 {
   "id": 1,
-  "firstName": "Ola",
+  "firstName": "Kari",
   "lastName": "Normann",
   "age": 30
 }
 ###
 DELETE {{PersonRestAPI_HostAddress}}/persons/1
+
+###
+PUT {{PersonRestAPI_HostAddress}}/persons/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Ola",
+  "lastName": "Normann",
+  "age": 40
+}

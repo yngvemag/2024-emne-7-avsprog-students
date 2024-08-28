@@ -7,22 +7,25 @@ public class PersonInMemoryDataStorage : IPersonRepository
 {
     private static readonly List<Person> _dbInMemStorage = [];
     
-    public Person? Add(Person person)
+    public async Task<Person?> AddAsync(Person person)
     {
+        await Task.Delay(10);
         // legge til en liste
         person.id = _dbInMemStorage.Count + 1;
         _dbInMemStorage.Add(person);
         return person;
     }
 
-    public ICollection<Person> GetAll()
+    public async Task<ICollection<Person>> GetAllAsync()
     {
+        await Task.Delay(10);
         // hente alt fra listen
         return _dbInMemStorage;
     }
 
-    public Person? DeleteById(int id)
+    public async Task<Person?> DeleteByIdAsync(int id)
     {
+        await Task.Delay(10);
         // vi må fjerne riktig person fra listen hvis personen finnes.
         var p = _dbInMemStorage.FirstOrDefault(p => p.id == id);
 
@@ -35,8 +38,9 @@ public class PersonInMemoryDataStorage : IPersonRepository
 
     }
 
-    public Person? Update(int id, Person person)
+    public async Task<Person?> UpdateAsync(int id, Person person)
     {
+        await Task.Delay(10);
         var p = _dbInMemStorage.FirstOrDefault(p => p.id == id);
         if (p is null) return null;
 
