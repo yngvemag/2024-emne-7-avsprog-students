@@ -1,5 +1,11 @@
 using PersonRestAPI.Endpoints;
+using PersonRestAPI.Repositories;
+using PersonRestAPI.Repositories.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// vi legger inn i container er: Klasse som implementerer IPersonRepository
+builder.Services.AddSingleton<IPersonRepository, PersonInMemoryDataStorage>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

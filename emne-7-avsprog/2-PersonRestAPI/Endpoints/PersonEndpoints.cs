@@ -1,4 +1,6 @@
-﻿using PersonRestAPI.Models;
+﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+using PersonRestAPI.Models;
+using PersonRestAPI.Repositories.Interfaces;
 
 namespace PersonRestAPI.Endpoints;
 
@@ -8,27 +10,29 @@ public static class PersonEndpoints
     public static void MapPersonEndpoints(this WebApplication app)
     {
         app.MapGet("/persons", GetPersons).WithName("GetPersons").WithOpenApi();
-            
-        app.MapPost("/persons", (Person person) =>
-            {
-                return Results.Ok(new Person()
-                {
-                    Age = person.Age + 1,
-                    FirstName = person.FirstName,
-                    LastName = person.LastName,
-                    id = person.id
-                });
-            }).WithName("AddPersons")
-            .WithOpenApi();
-    }
-    private static IResult GetPersons()
-    {
-        var person = new Person { Age = 20, id = 1, FirstName = "Ola", LastName = "Normann" };
-        return Results.Ok(person);
+        app.MapPost("/persons", AddPerson).WithName("AddPerson").WithOpenApi();
+        app.MapDelete("/persons/{id}", DeletePerson).WithName("DeletePerson").WithOpenApi();
     }
 
-    private static IResult AddPerson(Person person)
+    private static IResult DeletePerson(IPersonRepository repo, int id)
     {
-        
+        var person = repo.DeleteById(id);
+        return person is null
+            ? Results.BadRequest($"Did`nt find person with id={id}")
+            : Results.Ok(person);
+    }
+
+    private static IResult GetPersons(IPersonRepository repo)
+    {
+        // hente fra databasen !!
+        return Results.Ok(repo.GetAll());
+    }
+
+    private static IResult AddPerson(IPersonRepository repo ,Person person)
+    {
+        var p = repo.Add(person);
+        return p is null
+            ? Results.BadRequest("Fail to add database")
+            : Results.Ok(p);
     }
 }
