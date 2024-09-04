@@ -11,7 +11,7 @@ public class PersonInMemoryDataStorage : IPersonRepository
     {
         await Task.Delay(10);
         // legge til en liste
-        person.id = _dbInMemStorage.Count + 1;
+        person.Id = _dbInMemStorage.Count + 1;
         _dbInMemStorage.Add(person);
         return person;
     }
@@ -27,7 +27,7 @@ public class PersonInMemoryDataStorage : IPersonRepository
     {
         await Task.Delay(10);
         // vi må fjerne riktig person fra listen hvis personen finnes.
-        var p = _dbInMemStorage.FirstOrDefault(p => p.id == id);
+        var p = _dbInMemStorage.FirstOrDefault(p => p.Id == id);
 
         if (p is not null)
         {
@@ -38,10 +38,15 @@ public class PersonInMemoryDataStorage : IPersonRepository
 
     }
 
+    public Task<Person?> GetByIdAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<Person?> UpdateAsync(int id, Person person)
     {
         await Task.Delay(10);
-        var p = _dbInMemStorage.FirstOrDefault(p => p.id == id);
+        var p = _dbInMemStorage.FirstOrDefault(p => p.Id == id);
         if (p is null) return null;
 
         p.FirstName = person.FirstName;

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using PersonRestAPI.Models;
 using PersonRestAPI.Repositories.Interfaces;
 
@@ -33,10 +35,15 @@ public static class PersonEndpoints
             : Results.Ok(person);
     }
 
-    private static async Task<IResult> GetPersonsAsync(IPersonRepository repo)
+    private static async Task<IResult> GetPersonsAsync(
+        [FromServices]IPersonRepository repo, 
+        [FromQuery] int? id)
     {
+        var persons = await repo.GetAllAsync();
         // hente fra databasen !!
-        return Results.Ok(await repo.GetAllAsync());
+        return id is null
+            ? Results.Ok(persons)
+            : Results.Ok(persons.Where(p => p.Id == id));
     }
 
     private static async Task<IResult> AddPersonAsync(IPersonRepository repo ,Person person)

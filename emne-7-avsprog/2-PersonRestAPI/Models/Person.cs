@@ -2,7 +2,7 @@
 
 public class Person 
 {
-    public long id { get; set; }
+    public long Id { get; set; }
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public int Age { get; set; } 

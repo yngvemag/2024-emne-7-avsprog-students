@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
   "id": 1,
-  "firstName": "Kari",
+  "firstName": "Ola",
   "lastName": "Normann",
   "age": 30
 }
