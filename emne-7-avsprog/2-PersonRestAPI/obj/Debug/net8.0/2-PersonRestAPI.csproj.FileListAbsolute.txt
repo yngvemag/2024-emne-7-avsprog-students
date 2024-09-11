@@ -49,3 +49,13 @@ C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Pro
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\2-PersonRestAPI\bin\Debug\net8.0\Serilog.Sinks.File.dll

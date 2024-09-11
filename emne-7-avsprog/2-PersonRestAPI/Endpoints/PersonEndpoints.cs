@@ -46,8 +46,14 @@ public static class PersonEndpoints
             : Results.Ok(persons.Where(p => p.Id == id));
     }
 
-    private static async Task<IResult> AddPersonAsync(IPersonRepository repo ,Person person)
+    private static async Task<IResult> AddPersonAsync(
+        IPersonRepository repo , 
+        ILogger<Program> logger, 
+        Person person)
     {
+        logger.LogInformation("Person added: {@person}"
+            , person);
+        
         var p = await repo.AddAsync(person);
         return p is null
             ? Results.BadRequest("Fail to add database")
