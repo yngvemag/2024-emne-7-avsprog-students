@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\3-Hello-Controllers.props" />
+</Project>
