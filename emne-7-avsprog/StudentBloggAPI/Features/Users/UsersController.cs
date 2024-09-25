@@ -33,7 +33,24 @@ public class UsersController : ControllerBase
             ? BadRequest("No users found!")
             : Ok(userDtos);
     }
+    [HttpGet("{id}", Name = "GetUserByIdAsync")]
+    public async Task<ActionResult<UserDTO>> GetUserByIdAsync(Guid id)
+    {
+        var userDto = await _userService.GetByIdAsync(id);
+        return userDto is null
+            ? BadRequest("User not found")
+            : Ok(userDto);
+    }
     
     //  dotnet add package Microsoft.EntityFrameworkCore --version 8.0.8
+    [HttpPost(Name = "AddUserAsync")]
+    public async Task<ActionResult<UserDTO>> AddUserAsync(UserDTO dto)
+    {
+        var dtoResponse = await _userService.AddAsync(dto);
+        return dtoResponse is null
+            ? BadRequest("Failed to add User")
+            : Ok(dtoResponse);
+
+    }
 
 }

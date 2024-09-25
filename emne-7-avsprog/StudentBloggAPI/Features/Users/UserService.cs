@@ -9,16 +9,24 @@ public class UserService : IUserService
 {
     private readonly ILogger<UserService> _logger;
     private readonly IMapper<User, UserDTO> _userMapper;
+    private readonly IUserRepository _userRepository;
 
 
-    public UserService(ILogger<UserService> logger, IMapper<User, UserDTO> userMapper)
+    public UserService(ILogger<UserService> logger, 
+        IMapper<User, UserDTO> userMapper,
+        IUserRepository userRepository)
     {
         _logger = logger;
         _userMapper = userMapper;
+        _userRepository = userRepository;
     }
-    public Task<UserDTO?> AddAsync(UserDTO entity)
+    public async Task<UserDTO?> AddAsync(UserDTO dto)
     {
-        throw new NotImplementedException();
+        var model = _userMapper.MapToModel(dto);
+        var modelResponse = await _userRepository.AddAsync(model);
+        return modelResponse is null
+            ? null
+            : _userMapper.MapToDTO(modelResponse);
     }
 
     public Task<UserDTO?> UpdateAsync(UserDTO entity)
@@ -31,9 +39,12 @@ public class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public Task<UserDTO?> GetByIdAsync(Guid id)
+    public async Task<UserDTO?> GetByIdAsync(Guid id)
     {
-        throw new NotImplementedException();
+        var model = await _userRepository.GetByIdAsync(id);
+        return model is null
+            ? null
+            : _userMapper.MapToDTO(model);
     }
 
     public async Task<IEnumerable<UserDTO>> GetPagedAsync(int pageNumber, int pageSize)
