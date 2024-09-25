@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("3-Hello-Controllers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb3cb0c441ef7ad9e5b0d3471ef7092f16ec134d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b5404c58b0ffa1111d8ccf780fe3c12baf53e58")]
 [assembly: System.Reflection.AssemblyProductAttribute("3-Hello-Controllers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("3-Hello-Controllers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

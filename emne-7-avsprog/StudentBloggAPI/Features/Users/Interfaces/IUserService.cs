@@ -1,6 +1,8 @@
-﻿namespace StudentBloggAPI.Features.Users.Interfaces;
+﻿using StudentBloggAPI.Features.Common.Interfaces;
 
-public interface IUserService
+namespace StudentBloggAPI.Features.Users.Interfaces;
+
+public interface IUserService : IBaseService<UserDTO>
 {
-    Task<IEnumerable<UserDTO>> GetAllAsync();
+    
 }

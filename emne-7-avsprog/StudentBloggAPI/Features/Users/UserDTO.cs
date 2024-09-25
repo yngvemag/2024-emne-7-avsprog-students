@@ -9,6 +9,5 @@ public class UserDTO
     public string LastName { get; init; } = string.Empty;
     public string Email { get; init; } = string.Empty;
     public DateTime Created { get; init; }
-    
     public DateTime Updated { get; init; }
 }

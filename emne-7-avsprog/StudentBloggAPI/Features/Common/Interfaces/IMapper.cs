@@ -1,4 +1,4 @@
-﻿namespace StudentBloggAPI.Features.Users.Interfaces;
+﻿namespace StudentBloggAPI.Features.Common.Interfaces;
 
 public interface IMapper<TModel, TDto>
 {

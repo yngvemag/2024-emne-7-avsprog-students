@@ -28,10 +28,12 @@ public class UsersController : ControllerBase
     [HttpGet(Name = "GetUsers")]
     public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsersAsync()
     {
-        var userDtos = await _userService.GetAllAsync();
-        return userDtos is null
+        var userDtos = await _userService.GetPagedAsync(0,0);
+        return !userDtos.Any()
             ? BadRequest("No users found!")
             : Ok(userDtos);
     }
+    
+    //  dotnet add package Microsoft.EntityFrameworkCore --version 8.0.8
 
 }
