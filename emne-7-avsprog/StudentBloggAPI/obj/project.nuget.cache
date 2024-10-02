@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KjSEvj1HOFjUy8N+XaTKYvFDQz7BcFYcqylYR0aRw8X0h8Ac/1INk/DoA9U8MMZ5/gbgWpxEpY3o3hRXG+LfZg==",
+  "dgSpecHash": "iaXoTGLgZVyllRWqahygC4MAj1/6fAPDfVHRtzMs9LARHhUTdugTdyoqzjnxJSibRD/7MwvhDxVh7BtnUO74Ng==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yngve\\OneDrive - GOKSTAD AKADEMIET AS\\ga-code\\24-25\\Emne 7 Avansert Programmering\\students\\emne-7-avsprog\\StudentBloggAPI\\StudentBloggAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Yngve\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Yngve\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\Yngve\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Yngve\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",

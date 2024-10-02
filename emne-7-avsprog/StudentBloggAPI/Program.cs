@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMapper<User, UserDTO>, UserMapper>();
+builder.Services.AddScoped<IMapper<User, UserRegistrationDTO>, UserRegistrationMapper>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // Add dbcontext

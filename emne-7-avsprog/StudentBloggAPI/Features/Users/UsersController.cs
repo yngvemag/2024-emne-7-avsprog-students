@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Org.BouncyCastle.Asn1;
 using StudentBloggAPI.Features.Users.Interfaces;
 
 namespace StudentBloggAPI.Features.Users;
@@ -26,13 +27,22 @@ public class UsersController : ControllerBase
     }
     
     [HttpGet(Name = "GetUsers")]
-    public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsersAsync()
+    public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsersAsync(
+        [FromQuery] UserSearchParams? searchParams,
+        [FromQuery] int pageNr = 1, 
+        [FromQuery] int pageSize = 10)
     {
-        var userDtos = await _userService.GetPagedAsync(0,0);
-        return !userDtos.Any()
-            ? BadRequest("No users found!")
-            : Ok(userDtos);
+        if (searchParams?.FirstName is null &&
+            searchParams?.LastName is null &&
+            searchParams?.Email is null &&
+            searchParams?.UserName is null)
+        {
+            var userDtos = await _userService.GetPagedAsync(pageNr,pageSize);
+            return Ok(userDtos);
+        }
+        return Ok(await _userService.FindAsync(searchParams));
     }
+    
     [HttpGet("{id}", Name = "GetUserByIdAsync")]
     public async Task<ActionResult<UserDTO>> GetUserByIdAsync(Guid id)
     {
@@ -43,14 +53,14 @@ public class UsersController : ControllerBase
     }
     
     //  dotnet add package Microsoft.EntityFrameworkCore --version 8.0.8
-    [HttpPost(Name = "AddUserAsync")]
-    public async Task<ActionResult<UserDTO>> AddUserAsync(UserDTO dto)
+    // https://localhost:54634/api/v1/users/register
+    [HttpPost("register",Name = "RegisterUserAsync")]
+    public async Task<ActionResult<UserDTO>> RegisterUserAsync(UserRegistrationDTO dto)
     {
-        var dtoResponse = await _userService.AddAsync(dto);
-        return dtoResponse is null
-            ? BadRequest("Failed to add User")
-            : Ok(dtoResponse);
-
+        var user = await _userService.RegisterAsync(dto);
+        return user is null
+            ? BadRequest("Failed to register new user")
+            : Ok(user);
     }
 
 }
