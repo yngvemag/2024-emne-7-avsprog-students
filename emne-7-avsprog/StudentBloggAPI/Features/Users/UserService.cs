@@ -11,17 +11,20 @@ public class UserService : IUserService
     private readonly IMapper<User, UserDTO> _userMapper;
     private readonly IMapper<User, UserRegistrationDTO> _registrationMapper;
     private readonly IUserRepository _userRepository;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
 
     public UserService(ILogger<UserService> logger, 
         IMapper<User, UserDTO> userMapper, 
         IMapper<User, UserRegistrationDTO> registrationMapper, 
-        IUserRepository userRepository)
+        IUserRepository userRepository,
+        IHttpContextAccessor httpContextAccessor)
     {
         _logger = logger;
         _userMapper = userMapper;
         _registrationMapper = registrationMapper;
         _userRepository = userRepository;
+        _httpContextAccessor = httpContextAccessor;
     }
     public async Task<UserDTO?> AddAsync(UserDTO dto)
     {
@@ -37,9 +40,36 @@ public class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteByIdAsync(Guid id)
+    public async Task<bool> DeleteByIdAsync(Guid id)
     {
-        throw new NotImplementedException();
+        var loggedInUserId = _httpContextAccessor.HttpContext?.Items["UserId"] as string;
+        
+        // vi må hente innlogget bruker fra databasen.
+        var loggedInUser = (await _userRepository.FindAsync(u => u.Id.ToString() == loggedInUserId))
+            .FirstOrDefault();
+
+        if (loggedInUser == null)
+        {
+            _logger.LogWarning("Did not find logged in user with id={UserID}", loggedInUserId);
+            return false;
+        }
+        
+        // har vi lov til å slette !!
+        if (id.ToString().Equals(loggedInUser.Id.ToString()) || loggedInUser.IsAdminUser)
+        {
+            _logger.LogDebug("Deleting user with id: {UserId}", loggedInUserId);
+            var deletedUser =  await _userRepository.DeleteByIdAsync(id);
+
+            if (deletedUser == null)
+            {
+                _logger.LogWarning("Did not delete user with id: {UserId}", id);
+                return false;
+            }
+            
+            return true;
+        }
+
+        return false;
     }
 
     public async Task<UserDTO?> GetByIdAsync(Guid id)
@@ -90,9 +120,18 @@ public class UserService : IUserService
         return _userMapper.MapToDTO(addedUser);
     }
 
-    public async Task<Guid> AuthenticateUserAsync(string user, string password)
+    public async Task<Guid> AuthenticateUserAsync(string userName, string password)
     {
-        throw new NotImplementedException();
+        Expression<Func<User, bool>> expr = user => user.UserName == userName;
+        var usr = (await _userRepository.FindAsync(expr)).FirstOrDefault();
+        if (usr is null) return Guid.Empty;
+
+        // sjekker om passord stemmer !!
+        if (BCrypt.Net.BCrypt.Verify(password, usr.HashedPassword))
+            return usr.Id;
+        
+        return Guid.Empty;
+        ;
     }
 
     public async Task<IEnumerable<UserDTO>> FindAsync(UserSearchParams searchParams)

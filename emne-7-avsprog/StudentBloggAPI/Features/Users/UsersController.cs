@@ -63,4 +63,16 @@ public class UsersController : ControllerBase
             : Ok(user);
     }
 
+    [HttpDelete("{id}", Name = "DeleteUserAsync")]
+    public async Task<ActionResult<bool>> DeleteUserAsync(Guid id)
+    {
+        _logger.LogDebug("Deleting user with id: ({UserID})", id);
+        var result = await _userService.DeleteByIdAsync(id);
+        
+        return result
+            ? Ok(result)
+            : BadRequest($"Failed to delete user with id={id}");
+    }
+    
+
 }

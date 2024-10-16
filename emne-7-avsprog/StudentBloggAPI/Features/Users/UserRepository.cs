@@ -30,9 +30,16 @@ public class UserRepository : IUserRepository
         throw new NotImplementedException();
     }
 
-    public Task<User?> DeleteByIdAsync(Guid id)
+    public async Task<User?> DeleteByIdAsync(Guid id)
     {
-        throw new NotImplementedException();
+        var user = await _dbContext.Users.FindAsync(id);
+        await _dbContext.Users
+            .Where(u => u.Id == id)
+            .ExecuteDeleteAsync();
+        
+        await _dbContext.SaveChangesAsync();
+        return user;
+
     }
 
     public async Task<User?> GetByIdAsync(Guid id)

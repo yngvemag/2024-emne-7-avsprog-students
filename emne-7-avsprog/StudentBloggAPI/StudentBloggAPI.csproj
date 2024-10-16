@@ -23,10 +23,12 @@
         <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
         <PackageReference Include="Serilog.Sinks.MySQL" Version="5.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Data\Migrations\" />
+      <Folder Include="Extensions\" />
     </ItemGroup>
 
 </Project>
