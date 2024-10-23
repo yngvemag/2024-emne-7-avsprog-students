@@ -12,7 +12,9 @@ public class UsersController : ControllerBase
     private readonly IUserService _userService;
 
     // henter logger fra DI-Container, gjøres alltid i konstruktøren 
-    public UsersController(ILogger<UsersController> logger, IUserService userService)
+    public UsersController(
+        ILogger<UsersController> logger, 
+        IUserService userService)
     {
         _logger = logger;
         _userService = userService;

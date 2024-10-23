@@ -14,7 +14,7 @@ public class UserMapper : IMapper<User, UserDTO>
             Updated = model.Created,
             FirstName = model.FirstName,
             LastName = model.LastName,
-            UserName = model.LastName
+            UserName = model.UserName
         };
     }
 

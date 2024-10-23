@@ -51,7 +51,7 @@ public class UserService : IUserService
         if (loggedInUser == null)
         {
             _logger.LogWarning("Did not find logged in user with id={UserID}", loggedInUserId);
-            return false;
+            throw new UnauthorizedAccessException($"Did not find logged in user with id={loggedInUserId}");
         }
         
         // har vi lov til å slette !!
@@ -63,13 +63,13 @@ public class UserService : IUserService
             if (deletedUser == null)
             {
                 _logger.LogWarning("Did not delete user with id: {UserId}", id);
-                return false;
+                throw new UnauthorizedAccessException($"Did not delete user with id={id}");
             }
             
             return true;
         }
 
-        return false;
+        throw new UnauthorizedAccessException($"Did not delete user with id={id}");
     }
 
     public async Task<UserDTO?> GetByIdAsync(Guid id)
@@ -131,7 +131,6 @@ public class UserService : IUserService
             return usr.Id;
         
         return Guid.Empty;
-        ;
     }
 
     public async Task<IEnumerable<UserDTO>> FindAsync(UserSearchParams searchParams)

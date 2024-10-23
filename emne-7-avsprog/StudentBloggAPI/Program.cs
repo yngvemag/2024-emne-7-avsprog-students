@@ -28,7 +28,6 @@ builder.Services.AddDbContext<StudentBloggDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
         new MySqlServerVersion(new Version(8, 0, 33))));
     
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services
     .AddHttpContextAccessor()
     .AddEndpointsApiExplorer()
@@ -56,3 +55,5 @@ app.UseHttpsRedirection()
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }
