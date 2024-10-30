@@ -141,3 +141,6 @@ C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Pro
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\StudentBloggAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\StudentBloggAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\StudentBloggAPI\bin\Debug\net8.0\logs\logs-20240918.json
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\StudentBloggAPI\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\StudentBloggAPI\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\StudentBloggAPI\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

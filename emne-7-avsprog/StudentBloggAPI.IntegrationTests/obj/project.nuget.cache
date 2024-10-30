@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "b1LKIUnM3LA=",
+  "dgSpecHash": "Dh8cmoAiP7M=",
   "success": true,
   "projectFilePath": "C:\\Users\\Yngve\\OneDrive - GOKSTAD AKADEMIET AS\\ga-code\\24-25\\Emne 7 Avansert Programmering\\students\\emne-7-avsprog\\StudentBloggAPI.IntegrationTests\\StudentBloggAPI.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yngve\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Yngve\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Yngve\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Yngve\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\Yngve\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\Yngve\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
     "C:\\Users\\Yngve\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.5\\k4os.compression.lz4.streams.1.3.5.nupkg.sha512",

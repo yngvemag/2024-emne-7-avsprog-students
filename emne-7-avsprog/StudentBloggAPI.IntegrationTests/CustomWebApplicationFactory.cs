@@ -22,7 +22,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 
         builder.ConfigureTestServices(services =>
         {
-            //services.AddSingleton(UserRepositoryMock.Object);
+            services.AddSingleton(UserRepositoryMock.Object);
         });
     }
 }
