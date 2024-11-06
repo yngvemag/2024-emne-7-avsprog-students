@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HATEOASBasics")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d16a34bcad9a273fd7b9cf48372dbb8ecd61e85")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73f1106b1664f47545d5e21d5ae8a3c97ded62cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("HATEOASBasics")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HATEOASBasics")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

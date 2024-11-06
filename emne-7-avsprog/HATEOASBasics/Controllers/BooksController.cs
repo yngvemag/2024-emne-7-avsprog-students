@@ -23,7 +23,7 @@ public class BooksController : ControllerBase
     {
         _generator = generator;
     }
-    
+    #region GET SECTION OF BOOKS
     [HttpGet("GetBooks")]
     public ActionResult<IEnumerable<BookDto>> GetBooksAsync()
     {
@@ -65,4 +65,5 @@ public class BooksController : ControllerBase
         return Ok(book);
     }
     
+    #endregion
 }
