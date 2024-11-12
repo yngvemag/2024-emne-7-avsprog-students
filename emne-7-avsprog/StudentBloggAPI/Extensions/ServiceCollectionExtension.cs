@@ -1,4 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
+using StudentBloggAPI.Features.Common.Interfaces;
+using StudentBloggAPI.Features.Users;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace StudentBloggAPI.Extensions;
@@ -55,4 +57,51 @@ public static class ServiceCollectionExtension
         });
     }
     
+    public static void RegisterMappers(this IServiceCollection services)
+    {
+        var assembly = typeof(UserMapper).Assembly; // eller en hvilken som helst klasse som ligger i samme assembly som mapperne dine
+
+        var mapperTypes = assembly.GetTypes()
+            .Where(t => t is { IsClass: true, IsAbstract: false } && t.GetInterfaces()
+                .Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapper<,>)))
+            .ToList();
+
+        foreach (var mapperType in mapperTypes)
+        {
+            var interfaceType = mapperType.GetInterfaces().First(i => i.GetGenericTypeDefinition() == typeof(IMapper<,>));
+            services.AddScoped(interfaceType, mapperType);
+        }
+    }
+
+    public static void RegisterServices(this IServiceCollection services)
+    {
+        var assembly = typeof(UserMapper).Assembly; // eller en hvilken som helst klasse som ligger i samme assembly som mapperne dine
+
+        var serviceTypes = assembly.GetTypes()
+            .Where(t => t is { IsClass: true, IsAbstract: false } && t.GetInterfaces()
+                .Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IBaseService<>)))
+            .ToList();
+
+        foreach (var serviceType in serviceTypes)
+        {
+            var interfaceType = serviceType.GetInterfaces().First();
+            services.AddScoped(interfaceType, serviceType);
+        }
+    }
+
+    public static void RegisterRepositories(this IServiceCollection services)
+    {
+        var assembly = typeof(UserMapper).Assembly; // eller en hvilken som helst klasse som ligger i samme assembly som mapperne dine
+    
+        var reposTypes = assembly.GetTypes()
+            .Where(t => t is { IsClass: true, IsAbstract: false } && t.GetInterfaces()
+                .Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IBaseRepository<>)))
+            .ToList();
+    
+        foreach (var repoType in reposTypes)
+        {
+            var interfaceType = repoType.GetInterfaces().First();
+            services.AddScoped(interfaceType, repoType);
+        }
+    }
 }

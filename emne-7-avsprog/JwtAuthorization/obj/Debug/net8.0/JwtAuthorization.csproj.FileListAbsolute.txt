@@ -39,3 +39,7 @@ C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Pro
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\JwtAuthorization\obj\Debug\net8.0\JwtAuthorization.pdb
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\JwtAuthorization\obj\Debug\net8.0\JwtAuthorization.genruntimeconfig.cache
 C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\JwtAuthorization\obj\Debug\net8.0\ref\JwtAuthorization.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\JwtAuthorization\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\JwtAuthorization\bin\Debug\net8.0\Scrutor.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\JwtAuthorization\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Yngve\OneDrive - GOKSTAD AKADEMIET AS\ga-code\24-25\Emne 7 Avansert Programmering\students\emne-7-avsprog\JwtAuthorization\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

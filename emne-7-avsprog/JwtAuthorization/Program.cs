@@ -1,5 +1,6 @@
 using System.Text;
 using JwtAuthorization.Configuration;
+using JwtAuthorization.Extensions;
 using JwtAuthorization.Services;
 using JwtAuthorization.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -39,7 +40,8 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerWithJwtBearerAuthentication();
 
 var app = builder.Build();
 
