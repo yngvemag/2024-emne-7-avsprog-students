@@ -1,6 +1,7 @@
 using System.Text;
 using JwtAuthorization.Configuration;
 using JwtAuthorization.Extensions;
+using JwtAuthorization.Middleware;
 using JwtAuthorization.Services;
 using JwtAuthorization.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services
     .Configure<JwtOptions>(builder.Configuration.GetSection("JWT"));
+
+// builder.Services.AddScoped<JwtMiddleware>();
 
 // Add services to the container.
 builder.Services.AddAuthentication(options =>
@@ -53,7 +56,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+// app.UseMiddleware<JwtMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 

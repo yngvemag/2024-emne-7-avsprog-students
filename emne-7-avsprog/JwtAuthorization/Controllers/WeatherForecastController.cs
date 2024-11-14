@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,5 +32,36 @@ public class WeatherForecastController : ControllerBase
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+    }
+
+    [HttpGet("roles", Name = "GetWeatherForecastById")]
+    public ActionResult<IEnumerable<string>> GetUserAndRoles()
+    {
+        List<string> results = [];
+        var roles = HttpContext.User.Claims
+            .Where(x => x.Type == ClaimTypes.Role)
+            .Select(x => x.Value);
+        
+        var user = HttpContext.User.Claims
+            .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)
+            ?.Value;
+        
+        if (!string.IsNullOrEmpty(user)) 
+            results.Add(user);
+        results.AddRange(roles);
+        // if (HttpContext.Items.ContainsKey("UserId"))
+        // {
+        //     if (HttpContext.Items["UserId"] is string userId)
+        //         results.Add(userId);
+        // }
+        //
+        // if (HttpContext.Items.ContainsKey("Roles"))
+        // {
+        //     if (HttpContext.Items["Roles"] is IEnumerable<string> roles)
+        //         results.AddRange(roles);
+        // }
+        
+        return Ok(results);
+        
     }
 }

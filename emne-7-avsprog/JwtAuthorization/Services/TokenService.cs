@@ -66,4 +66,41 @@ public class TokenService : ITokenService
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(token);
     }
+
+    public (string? userId, IEnumerable<string>? roles) ValidateAccessToken(string accessToken)
+    {
+        try
+        {
+            JwtSecurityTokenHandler tokenHandler = new();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.Value.Key!));
+            
+            tokenHandler.ValidateToken(accessToken, new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                IssuerSigningKey = key,
+                ValidIssuer = _jwtOptions.Value.Issuer,
+                ValidAudience = _jwtOptions.Value.Audience,
+                ClockSkew = TimeSpan.Zero
+            }, out var validatedToken);
+            
+            JwtSecurityToken jwtSecurityToken = (JwtSecurityToken)validatedToken;
+            
+            string? userId = jwtSecurityToken?.Claims
+                .FirstOrDefault(claim => claim.Type == "nameid")?.Value;
+
+            IEnumerable<string>? roles = jwtSecurityToken?.Claims
+                .Where(x => x.Type == "role")
+                .Select(x => x.Value);
+
+            return (userId, roles);
+        }
+        catch (Exception e)
+        {
+            // Legg til logging !!!
+            return (null, null)!;
+        }
+    }
 }

@@ -16,11 +16,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddControllers();
 
-builder.Services
-    .AddScoped<IUserService, UserService>()
-    .AddScoped<IMapper<User, UserDTO>, UserMapper>()
-    .AddScoped<IMapper<User, UserRegistrationDTO>, UserRegistrationMapper>()
-    .AddScoped<IUserRepository, UserRepository>();
+builder.Services.RegisterMappers();
+builder.Services.RegisterServices();
+builder.Services.RegisterRepositories();
+// builder.Services
+//     .AddScoped<IUserService, UserService>()
+//     .AddScoped<IMapper<User, UserDTO>, UserMapper>()
+//     .AddScoped<IMapper<User, UserRegistrationDTO>, UserRegistrationMapper>()
+//     .AddScoped<IUserRepository, UserRepository>();
 
 builder.Services
     .AddValidatorsFromAssemblyContaining<Program>()
